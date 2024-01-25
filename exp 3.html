@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body{
+            align-items: first baseline;
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
+<script>
+    //alert('hi');
+    function val(){
+    var name=document.getElementById('t1').value;
+    const regExpress=/^[a-zA-Z]/;
+    if(regExpress.test(name))
+    alert('success');
+    else
+    alert('not success');}
+    function pas()
+    {
+        if(document.getElementById('ip2').value.length >=6)
+        alert('pass ok');
+        else
+        alert('pass not ok minimum 6 character');
+    }
+    function em() {
+    const reg=/^[a-zA-Z0-9.!#$%&-]+@[a-zA-Z0-9]+\.[a-z]{2,3}/; ///^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    email=document.getElementById('t2').value;
+    if(reg.test(email))
+    alert('email validated');
+    else
+    alert('email not valid');
+    }
+    function mob()
+    {
+        no=document.getElementById('t3').value.length;
+        if(no==10)
+        alert('valid number');
+        else
+        alert('not valid number');
+    }
+    function validateAll()
+    {
+        val();
+        pas();
+        em();
+        mob();
+    }
+</script>
+</head>
+<body>
+    Name<input type="text" id="t1"/><br/>
+    Password<input type="password" id="ip2" minlength="6" /><br/>
+    Email-id<input type="text" id="t2" /><br/>
+    Mobile No<input type="text" id="t3" maxlength="10"/>
+    <input type="button" value="click" onclick="validateAll()">
+</body>
+</html>
